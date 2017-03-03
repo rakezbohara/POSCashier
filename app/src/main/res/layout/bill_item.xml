@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/normalBack"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Chicken Chowmin"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/itemName"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="1"
+        android:text="200"
+        android:id="@+id/itemPrice"
+        android:textAlignment="viewEnd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="1"
+        android:text="3"
+        android:id="@+id/itemQty"
+        android:textAlignment="viewEnd"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="1"
+        android:text="600"
+        android:id="@+id/itemTotal"
+        android:textAlignment="viewEnd"
+        android:paddingRight="10dp"/>
+
+</LinearLayout>

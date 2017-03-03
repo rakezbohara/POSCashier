@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/pureWhite"
+    tools:context="com.app.rakez.poscashier.BillActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tableNo"
+        android:textColor="@color/pureBlack"
+        android:textSize="22sp"
+        android:text="Table 1"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:id="@+id/recyclerBill"
+        android:layout_below="@+id/tableNo"
+        android:layout_marginBottom="130dp"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/serviceCharge"
+        android:id="@+id/total"
+        android:text="Total"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service Charge"
+        android:id="@+id/serviceCharge"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/vat"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VAT"
+        android:id="@+id/vat"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/grandTotal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grand Total"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/pureBlack"
+        android:id="@+id/grandTotal"
+        android:layout_above="@+id/freeTable"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/pureWhite"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="Free Table"
+        android:id="@+id/freeTable"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>
