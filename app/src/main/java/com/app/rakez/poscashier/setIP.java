@@ -1,5 +1,6 @@
 package com.app.rakez.poscashier;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,11 +13,14 @@ public class setIP extends AppCompatActivity {
 
     EditText ipAddress;
     Button saveIp;
+    String requestFrom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_ip);
+        Bundle source = getIntent().getExtras();
+        requestFrom = source.getString("requestFrom");
         ipAddress = (EditText) findViewById(R.id.ipAddress);
         saveIp = (Button) findViewById(R.id.saveIP);
         saveIp.setOnClickListener(new View.OnClickListener() {
@@ -34,5 +38,19 @@ public class setIP extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent in;
+        if(requestFrom.equals("home")){
+            in = new Intent(getApplicationContext(),CashierHome.class);
+
+        }else{
+            in = new Intent(getApplicationContext(),ScrollingActivity.class);
+        }
+        startActivity(in);
+        finish();
     }
 }

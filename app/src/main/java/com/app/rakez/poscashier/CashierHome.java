@@ -42,6 +42,7 @@ public class CashierHome extends AppCompatActivity
     private RecyclerView rv;
     private ArrayList<String> tableNo = new ArrayList<>();
     private List<TableView> tableList;
+    Snackbar sb;
 
     private SwipeRefreshLayout swipeRefreshLayout;
     String ipAddress;
@@ -129,9 +130,12 @@ public class CashierHome extends AppCompatActivity
             finish();
         }
         if (id == R.id.setIP) {
+            Bundle source = new Bundle();
             Intent in = new Intent(getApplicationContext(),setIP.class);
+            source.putString("requestFrom","home");
+            in.putExtras(source);
             startActivity(in);
-            return true;
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -198,6 +202,12 @@ public class CashierHome extends AppCompatActivity
             public void onErrorResponse(VolleyError error) {
                 //pDialog.hide();
                 swipeRefreshLayout.setRefreshing(false);
+                View view = findViewById(R.id.drawer_layout);
+                sb = Snackbar.make(view, "Cannot connect to network", Snackbar.LENGTH_INDEFINITE);
+                sb.setAction("Action", null);
+                sb.show();
+
+
 
             }
         });

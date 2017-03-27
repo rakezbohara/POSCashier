@@ -30,7 +30,6 @@ public class ScrollingActivity extends AppCompatActivity {
     String uName=null,uPassword=null;
     int check = 0;
     TextView resultTv;
-
     String ipAddress;
 
     @Override
@@ -92,9 +91,12 @@ public class ScrollingActivity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.setIP) {
+            Bundle source = new Bundle();
             Intent in = new Intent(getApplicationContext(),setIP.class);
+            source.putString("requestFrom","login");
+            in.putExtras(source);
             startActivity(in);
-            return true;
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
